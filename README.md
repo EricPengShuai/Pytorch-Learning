@@ -10,7 +10,7 @@ Pytorch Framework learning for deeplearning
 
 ## CNN and RNN for Classify  
 1. `CNN_MINST.ipynb`: 使用[torch.nn.RNN](https://pytorch.org/docs/stable/generated/torch.nn.RNN.html)做手写数字书识别  
-    - 其中使用的数据集在`./dataset/MINST`文件夹中  
+    - 其中使用的是`./dataset/MINST`文件夹的`names_test.csv.gz`和`names_train.csv.gz`数据集  
 
 2. `GRU_Classifier.ipynb`: 使用[torch.nn.RNN](https://pytorch.org/docs/stable/generated/torch.nn.GRU.html)训练名字到国家的分类，即输入名字输出其属于哪个国家的
     - 其中使用的数据集在`./dataset`文件夹中  
