@@ -7,6 +7,9 @@ Pytorch Framework learning for deeplearning
 	- 效果图:  
 
 ![LSTM_Regression](https://i.loli.net/2021/03/12/7OJvI1sP26HuzAF.gif)
+
+
+
 2. `RNN_Regression.py`: 使用[torch.nn.RNN](https://pytorch.org/docs/stable/generated/torch.nn.RNN.html)模拟`sin(x)`逼近`cos(x)`  
    - 效果图：  
 
