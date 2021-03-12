@@ -3,10 +3,14 @@ Pytorch Framework learning for deeplearning
 
 ## RNN for Regression  
 1. `LSTM_Regression.py`: 使用[torch.nn.LSTM](https://pytorch.org/docs/stable/generated/torch.nn.LSTM.html)模拟`sin(x)`逼近`cos(x)`  
-    - 效果图：![LSTM_Regression]()  
+   
+	- 效果图:  
 
+![LSTM_Regression](https://i.loli.net/2021/03/12/7OJvI1sP26HuzAF.gif)
 2. `RNN_Regression.py`: 使用[torch.nn.RNN](https://pytorch.org/docs/stable/generated/torch.nn.RNN.html)模拟`sin(x)`逼近`cos(x)`  
-    - 效果图：![RNN_Regression]()  
+   - 效果图：  
+
+![RNN_Regression](https://i.loli.net/2021/03/12/4ozBxbLsX1c6f3J.gif)
 
 ## CNN and RNN for Classify  
 1. `CNN_MINST.ipynb`: 使用[torch.nn.RNN](https://pytorch.org/docs/stable/generated/torch.nn.RNN.html)做手写数字书识别  
