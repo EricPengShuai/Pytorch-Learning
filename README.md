@@ -15,6 +15,10 @@ Pytorch Framework learning for deeplearning
 
 ![RNN_Regression](https://i.loli.net/2021/03/12/4ozBxbLsX1c6f3J.gif)
 
+  
+3. `LSTM_airplane_forcast.ipynb`: 根据前9年的数据预测后3年的客流, 这个为了训练过程简单使用的数据是: `./dataset/airplane_data.csv`，只有144条数据，所以训练效果不是那么好，只是为了简单理解LSTM做回归分析的方法
+
+
 ## CNN and RNN for Classify  
 1. `CNN_MINST.ipynb`: 使用[torch.nn.RNN](https://pytorch.org/docs/stable/generated/torch.nn.RNN.html)做手写数字书识别  
     - 其中使用的是`./dataset/MINST`文件夹的`names_test.csv.gz`和`names_train.csv.gz`数据集  
