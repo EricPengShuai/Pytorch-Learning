@@ -15,8 +15,17 @@ Pytorch Framework learning for deeplearning
 
 ![RNN_Regression](https://i.loli.net/2021/03/12/4ozBxbLsX1c6f3J.gif)
 
-  
+
 3. `LSTM_airplane_forcast.ipynb`: 根据前9年的数据预测后3年的客流, 这个为了训练过程简单使用的数据是: `./dataset/airplane_data.csv`，只有144条数据，所以训练效果不是那么好，只是为了简单理解LSTM做回归分析的方法
+
+   **- 这个例子好像是有点问题的：根据[简书](https://www.jianshu.com/p/18f397d908be)的评论**
+
+   > 1. Data leakage的问题：数据的预处理放在了数据集分割之前，测试集的信息泄露给了训练集
+   > 2. 下面讨论最多的input_size和seq_len的问题：若本例目的是"以t-2,t-1的数据预测t的数据"的话
+   >    根据Pytorch的DOC定义“input of shape (seq_len, batch, input_size)”
+   >    而本例的输入维度从这可以看出来了train_X = train_X.reshape(-1, 1, 2)
+   >    说明input_size=2 batch=1 seq_len=？（我没算），不过这似大概没能用到LSTM的特性，或者说没法用"以t-2,t-1的数据预测t的数据"来解释本结构的目的。
+   >    我比较同意上面讨论的人的看法，即特征数（input_size）为1，seq_len为2，应该是比较合理的
 
 
 ## CNN and RNN for Classify  
