@@ -25,6 +25,10 @@ class LSTM(nn.Module):
         # rnn_out (batch, time_step, hidden_size)
         rnn_out, hc = self.lstm(x, hc)   # h_state是之前的隐层状态
 
+        # 这样将rnn_out直接喂入Linear的效果和分每个时间点喂入的效果差不多
+        # return self.output_layer(rnn_out.view(-1, hidden_size)).view(1, -1, output_size), hc
+
+        # 将rnn_out分为每个时间点喂入Linear
         out = []
         for time in range(rnn_out.size(1)):
             every_time_out = rnn_out[:, time, :]       # 相当于获取每个时间点上的输出，然后过输出层
@@ -76,15 +80,17 @@ for step in range(train_step):
     x = torch.from_numpy(x_np[np.newaxis, :, np.newaxis])
     y = torch.from_numpy(y_np[np.newaxis, :, np.newaxis])
 
-    pridect, h_state = lstm(x, h_state)
+    predict, h_state = lstm(x, h_state)
     # 必须要使用detach() https://www.cnblogs.com/catnofishing/p/13287322.html
     h_state = (h_state[0].detach(), h_state[1].detach())
+    # print(predict.shape)
+    # exit()
     
     if step == train_step - 1:
         endTime = time.time()
         print(f'TimeSum={round(endTime - startTime, 4)}s')
         # exit()
-    loss = loss_function(pridect, y)
+    loss = loss_function(predict, y)
     optimizer.zero_grad()
 
     loss.backward()
@@ -92,7 +98,7 @@ for step in range(train_step):
 
     # plotting
     plt.plot(steps, y_np.flatten(), 'r-')
-    plt.plot(steps, pridect.detach().numpy().flatten(), 'b-')
+    plt.plot(steps, predict.detach().numpy().flatten(), 'b-')
     plt.draw()
     plt.pause(0.05)
 
