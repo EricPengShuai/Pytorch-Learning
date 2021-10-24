@@ -60,7 +60,7 @@ Pytorch Framework learning for deeplearning
 
 ## Transformer
 
-- 参考 [transformer.md](./transformer.md)
+- 参考 [transformer.md](./Transformer.md)
 
 ## 其他  
 
