@@ -58,7 +58,12 @@ Pytorch Framework learning for deeplearning
 2. `GRU_Classifier.ipynb`: 使用 [torch.nn.RNN](https://pytorch.org/docs/stable/generated/torch.nn.GRU.html) 训练名字到国家的分类，即输入名字输出其属于哪个国家的
     - 其中使用的数据集在`./dataset`文件夹中  
 
+## Transformer
+
+- 参考 [transformer.md](./transformer.md)
+
 ## 其他  
+
 1. `RNNcell.ipynb`: 学习使用 [torch.nn.RNNcell](https://pytorch.org/docs/stable/generated/torch.nn.RNNCell.html?highlight=rnncell#torch.nn.RNNCell), 用于`hello --> ohlol`  
     - 其实也是一个分类问题  
 
