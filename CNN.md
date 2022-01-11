@@ -57,6 +57,12 @@
 
 <img src="https://i.loli.net/2021/05/24/ihmd4xAck5v2rsN.png" alt="Shared Weights" style="zoom:60%;"/>
 
+
+
+- [<font size=4>一图理解卷积操作</font>](https://yuzy007.github.io/2019/02/14/CNN/)
+
+<img src="https://yuzy007.github.io/img/NN/CNN/CONV_layer_02.gif" alt="CONV_layer_02" style="zoom:80%;" />
+
 ### 池化
 
 对卷积层输出的特征图**进一步特征提取**，主要分为**Max Pooling**、**Average Pooling**
