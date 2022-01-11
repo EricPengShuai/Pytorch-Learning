@@ -58,6 +58,26 @@ Pytorch Framework learning for deeplearning
 2. `GRU_Classifier.ipynb`: 使用 [torch.nn.RNN](https://pytorch.org/docs/stable/generated/torch.nn.GRU.html) 训练名字到国家的分类，即输入名字输出其属于哪个国家的
     - 其中使用的数据集在`./dataset`文件夹中  
 
+
+
+## Convolutional LSTM
+
+一般来说CNN可以提取图片的空间特征，LSTM可以提取时间特征，如果有时间序列的图片场景，我们可以使用 **Convolutional LSTM (ConvLSTM)** 提取**时空特征**（Spatio-temporal features），该网络由香港科技大学的 Shi Xingjian 等人提出，具体的论文可以参考：[Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting](https://arxiv.org/abs/1506.04214)
+
+![ConvLSTM](https://s2.loli.net/2022/01/11/n7FSVUbqstr28dj.png)
+
+> 代码参考：[ConvLSTM.py](./ConvLSTM.py)，其中主要有四个类：
+>
+> - `ConvLSTMCell`是卷积LSTM的细胞单元：通过卷积操作计算之后返回LSTM中隐层状态和细胞状态；
+> - `ConvLSTM`是实现卷积LSTM提取时空特征的一个模型：输入格式为 $(B, T, C, H, W)$ 或者 $(T, B, C, H, W)$，B是batchSize，T是timeLength或seqLen，CHW分别是图片的channel、height和width
+>   - PyTorch中CNN的输入形状为：$(B,C_{in},H,W)$ ，[参考链接](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=conv#torch.nn.Conv2d)
+>   - PyTorch中LSTM的输入形状为：$(B,T,Hidden_{in})$ 或者 $(T,B,Hidden_{in})$ ，[参考链接](https://pytorch.org/docs/stable/generated/torch.nn.LSTM.html?highlight=lstm#torch.nn.LSTM)
+> - `outputCNN`：一个简单的CNN网络处理ConvLSTM的输出
+>   - 一般LSTM的输出后面都会接一个Linear层处理，这里ConvLSTM的输出就是使用CNN处理
+> - `ConvLSTM_model`：使用ConvLSTM以及outputCNN的混合网络
+
+
+
 ## Transformer
 
 - 参考 [transformer.md](./Transformer.md)
