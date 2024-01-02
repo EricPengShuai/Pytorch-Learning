@@ -19,7 +19,7 @@ RNN有两个输入：
 
 ### 优化方式
 
-1. 全连接神经网络一般通过**反向传播（BackPropagation）**优化
+1. 全连接神经网络一般通过 **反向传播（BackPropagation）** 优化
 2. RNN通过**BackPropagation Through Time**（BPTT）优化，原理一样，只是这个需要考虑时间序列
 
 
@@ -37,7 +37,7 @@ RNN输入是有序的，可以**模拟人类阅读的顺序**去读取文本或�
 
 ### 存在问题
 
-RNN存在**梯度爆炸（Gradient Explode）和梯度消失（Gradient Vanish）**的问题。而且，在前向过程中，开始时刻的输入对后面时刻的影响越来越小，这就是长距离依赖问题。这样一来，就失去了**“记忆”**的能力，要知道生物的神经元拥有对过去时序状态很强的记忆能力。
+RNN存在 **梯度爆炸（Gradient Explode）和梯度消失（Gradient Vanish）** 的问题。而且，在前向过程中，开始时刻的输入对后面时刻的影响越来越小，这就是长距离依赖问题。这样一来，就失去了 **“记忆”** 的能力，要知道生物的神经元拥有对过去时序状态很强的记忆能力。
 
 <center class="half">
     <img src="https://i.loli.net/2021/05/24/r2YtXhcJCkTwaKS.png" alt="梯度爆炸和梯度消失"  width="450"/>
